@@ -28,7 +28,7 @@
 *{margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 12px)}
 body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-text-size-adjust:100%}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--tan);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
@@ -194,7 +194,9 @@ footer .made a{color:var(--sand);text-decoration:underline;text-underline-offset
   .about{padding-top:44px}
   .about .big{font-size:2.6rem}
   .feat{padding:40px 0 16px}
-  .feat .card{padding:18px}
+  .feat .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:2px 16px 10px;margin:0 -16px;scrollbar-width:none}
+  .feat .cards::-webkit-scrollbar{display:none}
+  .feat .card{flex:0 0 78%;scroll-snap-align:center;padding:18px}
   .menu{padding:32px 0}
   .srch{padding:0 12px}
   .tabs{padding:8px 12px}
@@ -261,7 +263,7 @@ footer .made a{color:var(--sand);text-decoration:underline;text-underline-offset
 
 <section class="menu" id="carta" aria-labelledby="cartaT">
   <div class="wrap"><h2 class="sec-title" id="cartaT">Carta</h2></div>
-  <label class="srch"><span class="sr">Buscar en la carta</span><input id="q" type="search" placeholder="Buscá en la carta: medialuna, torta, sin gluten…" autocomplete="off"></label>
+  <label class="srch"><span class="sr">Buscar en la carta</span><input id="q" type="search" placeholder="Buscá: medialuna, torta, palta…" autocomplete="off"></label>
   <div class="tabs" id="tabs" role="tablist" aria-label="Categorías de la carta"></div>
   <div class="wrap" id="menu"></div>
   <p class="pdf"><a class="btn main" href="https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view" target="_blank" rel="noopener">Ver carta completa en PDF</a></p>
@@ -400,7 +402,7 @@ const s=document.createElement("script");s.type="application/ld+json";s.textCont
 
 /* Revelado al scroll */
 if("IntersectionObserver" in window){
-  const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
+  const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:0,rootMargin:"0px 0px -8% 0px"});
   document.querySelectorAll(".vpanel").forEach(e=>{e.classList.add("rv");rv.observe(e)});
 }
 </script>
