@@ -1,258 +1,362 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paulis · Pastelería, Laminados y Café</title>
-<meta name="description" content="Paulis: laminados, pastelería y café. Mirá la carta completa: medialunas, croissants, tortas, desayunos, combos y más.">
-<meta property="og:title" content="Paulis · Laminados y Café">
-<meta property="og:description" content="Laminados, pastelería y café. Mirá la carta completa.">
+<title>Paulis · Pastelería, laminados y café en Buenos Aires</title>
+<meta name="description" content="Paulis: laminados, pastelería y café de elaboración propia. Mirá la carta completa: medialunas, croissants, tortas, desayunos, combos y opciones sin gluten.">
+<meta name="theme-color" content="#56819f">
+<!-- Para que la vista previa funcione al compartir, usá una URL absoluta: https://tudominio.com/hero.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Paulis · Laminados y café">
+<meta property="og:description" content="Laminados, pastelería y café de elaboración propia. Mirá la carta completa.">
 <meta property="og:image" content="hero.jpg">
 <link rel="icon" href="logo.png">
+<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-:root{--blue:#a7c0d3;--blue-d:#56819f;--sage:#8fb3a8;--sage-d:#4d7a6c;--tan:#d9a15f;--ink:#34454f;--soft:#f3f8fa;--line:#dbe6ec}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+:root{
+  --blue:#a7c0d3;--blue-d:#4a7593;--sage-d:#456f61;--tan:#c98a3f;--ink:#34454f;--muted:#566b77;
+  --soft:#f3f8fa;--line:#dbe6ec;--deep:#2f4756;--panel:#4b7592;--sand:#f1c48f;
+  --r-sm:10px;--r-md:18px;--r-lg:36px;--head:60px;
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 12px)}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--tan);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .script{font-family:Sacramento,cursive;font-weight:400}
-.btn{display:inline-block;padding:12px 24px;border-radius:99px;font-weight:600;font-size:.9rem;transition:.2s}
-.btn.main{background:var(--blue-d);color:#fff}.btn.main:hover{background:#43708d}
-.btn.alt{border:2px solid var(--blue-d);color:var(--blue-d)}.btn.alt:hover{background:var(--blue-d);color:#fff}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 14px;border-radius:8px;z-index:50}
+.skip:focus{left:8px}
+
+/* Botones */
+.btn{display:inline-block;padding:12px 24px;border-radius:99px;font-weight:600;font-size:.9rem;transition:background .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--blue-d);color:#fff;box-shadow:0 6px 16px rgba(86,129,159,.25)}
+.btn.main:hover{background:#3e6682}
+.btn.alt{border:2px solid var(--blue-d);color:var(--blue-d)}
+.btn.alt:hover{background:var(--blue-d);color:#fff}
+
+/* Header */
 header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--head)}
 .brand{display:flex;align-items:center;gap:10px;font-size:1.9rem;color:var(--blue-d)}
 .brand img{width:38px;height:38px;border-radius:50%}
-nav a{margin-left:22px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 nav a:hover{color:var(--blue-d)}
-.hero{background:linear-gradient(160deg,#e3f1f5 0%,#fff 60%);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:48px;padding-bottom:48px}
+nav .navwa{background:var(--sage-d);color:#fff;padding:8px 16px;border-radius:99px}
+nav .navwa:hover{color:#fff;background:#375a4e}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#e3f1f5 0%,#fff 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:48px;padding-bottom:70px}
 .hero h1{font-size:clamp(4rem,11vw,6.6rem);line-height:.95;color:var(--blue-d)}
 .hero .sub{letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;font-weight:600;color:var(--sage-d);margin:8px 0 18px}
-.hero p{max-width:420px;margin-bottom:26px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-.hero img.ph{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 24px 24px;box-shadow:0 20px 50px rgba(86,129,159,.25)}
-.sec-title{text-align:center;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--sage-d);font-size:1.05rem;margin-bottom:26px}
-.sec-title:before{content:"[ "}.sec-title:after{content:" ]"}
-.feat{padding:64px 0 24px}
+.hero p.lead{max-width:420px;margin-bottom:26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.open{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.78rem;font-weight:600;margin-bottom:18px}
+.open:empty{display:none}
+.dot{width:9px;height:9px;border-radius:50%}
+.dot.g{background:#3fbf7f;box-shadow:0 0 0 4px rgba(63,191,127,.2)}
+.dot.r{background:#d9825f}
+.phw{position:relative}
+.phw::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border-radius:200px 200px 24px 24px;background:var(--blue);opacity:.35}
+.ph{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 24px 24px;box-shadow:0 20px 50px rgba(86,129,159,.25)}
+.chip{position:absolute;left:-14px;bottom:28px;background:#fff;border-radius:99px;padding:9px 16px;font-size:.8rem;font-weight:600;box-shadow:0 8px 24px rgba(52,69,79,.18);color:var(--blue-d)}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:60px}
+.hero .wrap>div:first-child>*{animation:up .8s both}
+.hero .wrap>div:first-child>*:nth-child(2){animation-delay:.1s}
+.hero .wrap>div:first-child>*:nth-child(3){animation-delay:.2s}
+.hero .wrap>div:first-child>*:nth-child(4){animation-delay:.3s}
+.hero .wrap>div:first-child>*:nth-child(5){animation-delay:.4s}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+.band{background:var(--blue-d);color:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;padding:14px 20px;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.band i{font-style:normal;color:#f1c48f}
+
+/* Secciones y tarjetas */
+.sec-title{display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--sage-d);font-size:1.05rem;margin-bottom:26px}
+.sec-title::before,.sec-title::after{content:"";height:1px;width:48px;background:#8fb3a8}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;text-align:center;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(86,129,159,.18)}
 .card h3{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d)}
-.card p{font-size:.85rem;margin:8px 0 12px;min-height:60px}
+.card p{font-size:.85rem;margin:8px 0 12px}
 .card b{color:var(--tan);font-size:1.15rem}
-.menu{padding:48px 0}
-.chips{position:sticky;top:60px;z-index:15;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px 20px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chips a{display:inline-block;margin-right:6px;padding:7px 14px;border-radius:99px;font-size:.78rem;font-weight:600;background:var(--soft);color:var(--ink)}
-.chips a.on{background:var(--blue-d);color:#fff}
-.msec{padding-top:44px}
-.msec h2{text-align:center;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-d);font-size:1.1rem}
-.msec h2:before{content:"[ "}.msec h2:after{content:" ]"}
-.msec .sub{text-align:center;color:var(--blue-d);font-style:italic;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;margin-top:2px}
-.note{text-align:center;font-size:.82rem;font-style:italic;margin:12px auto 0;max-width:560px;color:#5d7380}
-.list{display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:22px}
-.it .row{display:flex;align-items:baseline;gap:8px}
-.it .n{font-weight:600;font-size:.92rem}
-.it .dots{flex:1;border-bottom:2px dotted var(--blue);transform:translateY(-4px)}
-.it .p{font-weight:700;color:var(--blue-d);white-space:nowrap;font-size:.92rem}
-.it .d{font-size:.78rem;color:#667c88;font-style:italic;margin-top:1px}
-.it{padding:8px 0}
-.visit{background:var(--soft);padding:60px 0;margin-top:40px}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;text-align:center}
-.vgrid .card{background:#fff}
-.vgrid h3{margin-bottom:8px}
-.vgrid p{min-height:0;margin:0}
-footer{padding:32px 0;text-align:center;font-size:.8rem;color:#667c88}
-footer .script{font-size:2rem;color:var(--blue-d);display:block}
-.wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);font-weight:700;font-size:.72rem}
-@media(max-width:760px){
- nav a:not(.keep){display:none}
- .hero .wrap{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.hero .cta{justify-content:center}
- .hero img.ph{max-width:340px;margin:0 auto}
- .cards,.list{grid-template-columns:1fr}
-}
+.card .ic{font-size:2rem;margin-bottom:6px}
 .about{padding:64px 0 8px;text-align:center}
 .about .big{font-size:3.2rem;color:var(--blue-d);line-height:1}
 .about .lead{max-width:520px;margin:8px auto 28px}
 .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:26px}
 .gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px}
-.chips{position:static;border:0;white-space:normal;overflow:visible;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 20px 8px}
-.chips button{font:inherit;font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:99px;border:0;background:var(--soft);color:var(--ink);cursor:pointer}
-.chips button.on{background:var(--blue-d);color:#fff}
-.msec{display:none;padding-top:28px}.msec.on{display:block}
-#mapbox{margin-top:22px}#mapbox iframe{width:100%;height:320px;border:0;border-radius:18px}
-.hero{position:relative}
-.hero .wrap>div:first-child>*{animation:up .8s both}.hero .wrap>div:first-child>*:nth-child(2){animation-delay:.1s}.hero .wrap>div:first-child>*:nth-child(3){animation-delay:.2s}.hero .wrap>div:first-child>*:nth-child(4){animation-delay:.3s}.hero .wrap>div:first-child>*:nth-child(5){animation-delay:.4s}
-@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.phw{position:relative}
-.phw:before{content:"";position:absolute;inset:-18px -18px 18px 18px;border-radius:200px 200px 24px 24px;background:var(--blue);opacity:.35;z-index:0}
-.hero img.ph{position:relative;z-index:1}
-.chip{position:absolute;z-index:2;left:-14px;bottom:28px;background:#fff;border-radius:99px;padding:9px 16px;font-size:.8rem;font-weight:600;box-shadow:0 8px 24px rgba(52,69,79,.18);color:var(--blue-d)}
-.wave{position:absolute;left:0;bottom:-1px;width:100%;height:60px}
-.hero .wrap{padding-bottom:70px}
-.open{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.78rem;font-weight:600;margin-bottom:18px}
-.dot{width:9px;height:9px;border-radius:50%;display:inline-block}.dot.g{background:#3fbf7f;box-shadow:0 0 0 4px rgba(63,191,127,.2)}.dot.r{background:#d9825f}
-.band{background:var(--blue-d);color:#fff;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 22px;padding:14px 20px;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
-.band i{font-style:normal;color:var(--tan)}
-.card{transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(86,129,159,.18)}
-.ic{font-size:2rem;margin-bottom:6px}
-.btn{box-shadow:0 6px 16px rgba(86,129,159,.18)}.btn:hover{transform:translateY(-2px)}
-.navwa{background:var(--sage-d);color:#fff!important;padding:8px 16px;border-radius:99px}
-.menu{background:linear-gradient(#fff,var(--soft) 40%,#fff)}
-#menu{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 14px 44px rgba(86,129,159,.12);padding:6px 32px 34px;margin-top:10px;max-width:1000px}
-.it{border-radius:10px;padding:8px 10px;transition:.2s}.it:hover{background:var(--soft)}
-.msec.on{animation:up .5s both}
-.sec-title{display:flex;align-items:center;justify-content:center;gap:14px}.sec-title:before,.sec-title:after{content:"";height:1px;width:48px;background:var(--sage)}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
-.card.rv.in:hover{transform:translateY(-5px)}
-footer{background:#2f4756;color:#c9dbe6;margin-top:0;padding:44px 0}footer .script{color:#fff;font-size:2.6rem}
-.visit{margin-top:0}
-@media(max-width:760px){.chip{left:6px}.phw:before{inset:-12px -8px 12px 8px}.navwa{display:none!important}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-.wa{width:58px;height:58px;background:#25d366;box-shadow:0 8px 22px rgba(37,211,102,.45);transition:.2s}.wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
-.visit{padding:20px 0 70px;background:#fff;margin:0}
-.vpanel{background:#4b7592;color:#fff;border-radius:36px;padding:56px 28px;text-align:center}
-.vpanel .te{color:#f1c48f;font-size:2.4rem;line-height:1}
+.feat{padding:64px 0 24px}
+.feat .card p{min-height:60px}
+
+/* Carta */
+.menu{padding:48px 0;background:linear-gradient(#fff,var(--soft) 40%,#fff)}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 20px 18px}
+.tabs button{font:inherit;font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:99px;border:0;background:#e6eff4;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.tabs button:hover{background:var(--blue)}
+.tabs button[aria-selected="true"]{background:var(--blue-d);color:#fff}
+#menu{max-width:1000px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 14px 44px rgba(86,129,159,.12);padding:6px 32px 34px}
+.msec{display:none;padding-top:28px}
+.msec.on{display:block;animation:up .5s both}
+.msec h3{text-align:center;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-d);font-size:1.1rem}
+.msec .sub{text-align:center;color:var(--blue-d);font-style:italic;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;margin-top:2px}
+.note{text-align:center;font-size:.82rem;font-style:italic;margin:12px auto 0;max-width:560px;color:var(--muted)}
+.list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:22px}
+.it{padding:8px 10px;border-radius:var(--r-sm);transition:background .2s}
+.it:hover{background:var(--soft)}
+.it .row{display:flex;align-items:baseline;gap:8px}
+.it .n{font-weight:600;font-size:.92rem}
+.it .dots{flex:1;border-bottom:2px dotted var(--blue);transform:translateY(-4px)}
+.it .p{font-weight:700;color:var(--blue-d);white-space:nowrap;font-size:.92rem}
+.it .d{font-size:.78rem;color:var(--muted);font-style:italic;margin-top:1px}
+.pdf{text-align:center;margin-top:30px}
+
+/* Visitanos */
+.visit{padding:20px 0 70px}
+.vpanel{background:var(--panel);color:#fff;border-radius:var(--r-lg);padding:56px 28px;text-align:center}
+.vpanel .te{color:var(--sand);font-size:2.4rem;line-height:1}
 .vpanel h2{font-size:clamp(1.9rem,5vw,2.6rem);margin-top:4px}
-.vpanel .ul{display:block;width:64px;height:3px;background:#f1c48f;border-radius:3px;margin:12px auto 34px}
-.vcols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;text-align:left}
-.vinfo{text-align:center}.vinfo h3{font-size:1.25rem}.vinfo p{opacity:.9;margin-bottom:18px}
+.vpanel .ul{display:block;width:64px;height:3px;background:var(--sand);border-radius:3px;margin:12px auto 34px}
+.vcols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.vinfo h3{font-size:1.25rem}
+.vinfo p{opacity:.92;margin-bottom:18px}
 .vinfo table{width:100%;max-width:340px;margin:0 auto 24px;border-collapse:collapse}
-.vinfo td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.3)}.vinfo td:last-child{text-align:right}
+.vinfo td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.vinfo td:last-child{text-align:right}
 .vb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.vb a{padding:11px 22px;border-radius:99px;border:2px solid #fff;font-weight:600;font-size:.88rem;transition:.2s}
-.vb a:hover{background:rgba(255,255,255,.18)}.vb a.f{background:#f3f8fa;color:#2f4756;border-color:#f3f8fa}.vb a.f:hover{background:#fff}
-#mapbox{margin:0}#mapbox iframe{height:340px;border:6px solid var(--blue);border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-footer{text-align:center}
+.vb a{padding:11px 22px;border-radius:99px;border:2px solid #fff;font-weight:600;font-size:.88rem;transition:background .2s}
+.vb a:hover{background:rgba(255,255,255,.18)}
+.vb a.f{background:var(--soft);color:var(--deep);border-color:var(--soft)}
+.vb a.f:hover{background:#fff}
+#mapbox iframe{width:100%;height:340px;border:6px solid var(--blue);border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+
+/* Footer */
+footer{background:var(--deep);color:#c9dbe6;padding:44px 0;text-align:center;font-size:.85rem}
 .frow{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;color:#fff;font-size:1rem}
-.logo{background:#f3f8fa;border-radius:18px;padding:6px 16px;display:inline-flex}.logo img{width:58px;height:58px;border-radius:50%}
+.logo{background:var(--soft);border-radius:var(--r-md);padding:6px 16px;display:inline-flex}
+.logo img{width:58px;height:58px;border-radius:50%}
 .fig{display:inline-block;margin:22px 0 14px;color:#fff;text-decoration:underline;font-weight:500}
-footer .copy{margin:0 0 8px;color:#a9c0cf}footer .made{color:#c9dbe6}
-footer .made a{color:#f1c48f;text-decoration:underline;text-underline-offset:3px;font-weight:600}
-@media(max-width:760px){.vcols{grid-template-columns:1fr}.vpanel{padding:44px 18px;border-radius:28px}}
+footer .copy{margin-bottom:8px;color:#a9c0cf}
+footer .made a{color:var(--sand);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+
+/* WhatsApp flotante */
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:none;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(37,211,102,.45);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* Revelado al scroll (solo si hay JS) */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:760px){
+  nav a:not(.keep){display:none}
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .cta{justify-content:center}
+  .ph{max-width:340px;margin:0 auto}
+  .phw{max-width:340px;margin:0 auto}
+  .phw::before{inset:-12px -8px 12px 8px}
+  .chip{left:6px}
+  .cards,.list,.vcols{grid-template-columns:1fr}
+  .feat .card p{min-height:0}
+  #menu{padding:6px 16px 26px}
+  .vpanel{padding:44px 18px;border-radius:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#carta">Ir a la carta</a>
+
 <header><div class="wrap">
- <a href="#top" class="brand script"><img src="logo.png" alt="Logo Paulis">Paulis</a>
- <nav><a class="navwa" id="navwa" target="_blank" rel="noopener" style="display:none">Pedí por WhatsApp</a><a href="#nosotros">Nosotros</a><a href="#carta">Carta</a><a href="#visitanos" class="keep">Visitanos</a></nav>
+  <a href="#top" class="brand script"><img src="logo.png" alt="" width="38" height="38">Paulis</a>
+  <nav aria-label="Principal">
+    <a class="navwa" id="navwa" target="_blank" rel="noopener" hidden>Pedí por WhatsApp</a>
+    <a href="#nosotros">Nosotros</a><a href="#carta">Carta</a><a href="#visitanos" class="keep">Visitanos</a>
+  </nav>
 </div></header>
 
-<section class="hero" id="top"><div class="wrap">
- <div>
-  <h1 class="script">Paulis</h1>
-  <div class="sub">Pastelería · Laminados y Café</div>
-  <div class="open" id="open"></div>
-  <p>Medialunas, croissants, tortas y café para arrancar bien el día o cortar la tarde con algo rico.</p>
-  <div class="cta"><a class="btn main" href="#carta">Ver la carta</a><a class="btn alt" id="mapBtn" href="#visitanos">Cómo llegar</a></div>
- </div>
- <div class="phw"><img class="ph" src="hero.jpg" alt="Café con medialuna y jugo de naranja en Paulis"><span class="chip">🥐 Elaboración propia</span></div>
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1 class="script">Paulis</h1>
+    <div class="sub">Pastelería · Laminados y café</div>
+    <div class="open" id="open" role="status"></div>
+    <p class="lead">Medialunas, croissants, tortas y café para arrancar bien el día o cortar la tarde con algo rico.</p>
+    <div class="cta"><a class="btn main" href="#carta">Ver la carta</a><a class="btn alt" id="mapBtn" href="#visitanos">Cómo llegar</a></div>
+  </div>
+  <div class="phw">
+    <img class="ph" src="hero.jpg" width="640" height="800" fetchpriority="high" alt="Café con medialuna y jugo de naranja en Paulis">
+    <span class="chip">🥐 Elaboración propia</span>
+  </div>
 </div>
- <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,40 L1440,80 L0,80Z" fill="#a7c0d3" opacity=".3"/></svg></section>
-<div class="band"><span>Laminados</span><i>✦</i><span>Café</span><i>✦</i><span>Patissería</span><i>✦</i><span>Elaboración propia</span></div>
+<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,40 L1440,80 L0,80Z" fill="#a7c0d3" opacity=".3"/></svg>
+</section>
+
+<div class="band" aria-hidden="true"><span>Laminados</span><i>✦</i><span>Café</span><i>✦</i><span>Pastelería</span><i>✦</i><span>Elaboración propia</span></div>
 
 <section class="about" id="nosotros"><div class="wrap">
- <div class="script big">Elaboración propia</div>
- <p class="lead">Laminados, café y patissería hechos en casa. Pasá a desayunar, merendar o llevarte algo rico.</p>
- <div class="cards">
-  <div class="card"><div class="ic">🥐</div><h3>Laminados</h3><p>Medialunas, croissants y pan de chocolate, dulces y salados.</p></div>
-  <div class="card"><div class="ic">☕</div><h3>Café</h3><p>Del lungo al flat white, calientes o fríos.</p></div>
-  <div class="card"><div class="ic">🍰</div><h3>Patissería</h3><p>Tortas, tartas y postres, con opciones sin gluten.</p></div>
- </div>
- <div class="gal" id="gal"></div>
- <p style="margin-top:26px"><a class="btn main" id="igBtn" target="_blank" rel="noopener" style="display:none">Seguinos en Instagram</a></p>
+  <p class="script big">Elaboración propia</p>
+  <p class="lead">Laminados, café y pastelería hechos en casa. Pasá a desayunar, merendar o llevarte algo rico.</p>
+  <div class="cards">
+    <div class="card"><div class="ic" aria-hidden="true">🥐</div><h3>Laminados</h3><p>Medialunas, croissants y pan de chocolate, dulces y salados.</p></div>
+    <div class="card"><div class="ic" aria-hidden="true">☕</div><h3>Café</h3><p>Del lungo al flat white, calientes o fríos.</p></div>
+    <div class="card"><div class="ic" aria-hidden="true">🍰</div><h3>Pastelería</h3><p>Tortas, tartas y postres, con opciones sin gluten.</p></div>
+  </div>
+  <div class="gal" id="gal"></div>
+  <p style="margin-top:26px"><a class="btn main" id="igBtn" target="_blank" rel="noopener" hidden>Seguinos en Instagram</a></p>
 </div></section>
 
-<section class="feat"><div class="wrap">
- <div class="sec-title">Favoritos</div>
- <div class="cards">
-  <div class="card"><h3>Croissant Prosciutto</h3><p>Palta, cherry confitada, rúcula, pesto de albahaca, bocconcini y jamón crudo.</p><b>$18.000</b></div>
-  <div class="card"><h3>Mousse de dulce de leche</h3><p>Bizcocho húmedo de chocolate, corazón de dulce de leche y mousse.</p><b>$18.000</b></div>
-  <div class="card"><h3>Combo Buenos Aires</h3><p>Un croissant con una rica infusión: té, latte o flat white.</p><b>$10.600</b></div>
- </div>
+<section class="feat" aria-labelledby="favT"><div class="wrap">
+  <h2 class="sec-title" id="favT">Favoritos</h2>
+  <div class="cards" id="favs"></div>
 </div></section>
 
-<section class="menu" id="carta">
- <div class="wrap"><div class="sec-title">Carta</div></div>
- <div class="chips" id="chips"></div>
- <div class="wrap" id="menu"></div>
- <p style="text-align:center;margin-top:30px"><a class="btn main" href="https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view" target="_blank" rel="noopener">Ver carta completa en PDF</a></p>
+<section class="menu" id="carta" aria-labelledby="cartaT">
+  <div class="wrap"><h2 class="sec-title" id="cartaT">Carta</h2></div>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Categorías de la carta"></div>
+  <div class="wrap" id="menu"></div>
+  <p class="pdf"><a class="btn main" href="https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view" target="_blank" rel="noopener">Ver carta completa en PDF</a></p>
 </section>
 
 <section class="visit" id="visitanos"><div class="wrap"><div class="vpanel">
- <div class="script te">Te esperamos</div>
- <h2>Pasá por Paulis</h2><span class="ul"></span>
- <div class="vcols"><div class="vinfo" id="vinfo"></div><div id="mapbox"></div></div>
+  <p class="script te">Te esperamos</p>
+  <h2>Pasá por Paulis</h2><span class="ul" aria-hidden="true"></span>
+  <div class="vcols"><div class="vinfo" id="vinfo"></div><div id="mapbox"></div></div>
 </div></div></section>
+</main>
 
 <footer><div class="wrap">
- <div class="frow"><span class="logo"><img src="logo.png" alt="Paulis"></span><span id="faddr"></span></div>
- <a id="fig" class="fig" target="_blank" rel="noopener"></a>
- <p class="copy">© 2026 Paulis Pastelería · Los precios pueden cambiar sin previo aviso.</p>
- <p class="made">Maqueta creada por <a id="dev">Diego Zarrelli</a> ↗</p>
+  <div class="frow"><span class="logo"><img src="logo.png" alt="Paulis" width="58" height="58" loading="lazy"></span><span id="faddr"></span></div>
+  <a id="fig" class="fig" target="_blank" rel="noopener" hidden></a>
+  <p class="copy">© <span id="yr">2026</span> Paulis Pastelería · Los precios pueden cambiar sin previo aviso.</p>
+  <p class="made">Maqueta creada por <a id="dev">Diego Zarrelli</a></p>
 </div></footer>
-<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
 <script>
-// ✏️ DATOS DEL LOCAL: completá lo que tengas. Lo que dejes vacío no se muestra.
+"use strict";
+/* ✏️ DATOS DEL LOCAL — lo que dejes vacío no se muestra */
 const INFO={
- address:"Av. Emilio Castro 6907, Buenos Aires",
- hours:[["Todos los días","8 a 20 hs"]],
- open:8, close:20,   // para el cartel "Abierto ahora"
- whatsapp:"5491132092358",
- instagram:"paulis.pasteleria",
- dev:""              // link de "Diego Zarrelli" en el footer (opcional)
+  name:"Paulis",
+  address:"Av. Emilio Castro 6907, Buenos Aires",
+  hours:[["Todos los días","8 a 20 hs"]],
+  open:8, close:20,              // para el cartel "Abierto ahora"
+  tz:"America/Argentina/Buenos_Aires",
+  whatsapp:"5491132092358",
+  waText:"Hola Paulis, quería hacer un pedido.",
+  instagram:"paulis.pasteleria",
+  dev:"",                        // link del footer (opcional)
+  pdf:"https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view"
 };
-// 📸 Fotos extra del local: subí las imágenes al repo y poné los nombres acá, ej: ["lugar1.jpg","lugar2.jpg"]
+/* 📸 Fotos extra: subilas al repo y poné los nombres, ej: ["lugar1.jpg"] */
 const GALLERY=[];
 
-// Carta: "Nombre|Precio|Descripción (opcional)"
+/* Carta: "Nombre|Precio (número)|Descripción opcional" */
 const MENU=[
-{id:"cafeteria",t:"Cafetería",i:["Lungo|$4.200","Doppio|$4.500","Cortado|$5.000","Americano|$4.800","Macchiato|$5.000","Magic|$5.000","Capuccino|$6.100","Latte|$6.500","Flat White|$6.000","Latte Saborizado|$7.000","Espresso Tonic|$6.000","Submarino|$6.500","Ice Latte Vainilla / Caramel|$7.000","Iced Latte|$6.500","Iced Flat|$5.560","Iced Tea|$5.000","Té en Hebras|$6.000"]},
-{id:"combos",t:"Combos Paulis",n:"Todos vienen con una rica infusión: té, latte o flat white.",i:["Porteño|$8.000|Con una medialuna","Buenos Aires|$10.600|Con un croissant","Porteño con tostadas|$15.000|Con queso crema, mermelada, pan blanco o integral","Bon appétit con cookie|$11.000|Vainilla chip, franui, limón, red velvet o frambuesa","Bon appétit con chipá|$9.200","Parisino|$11.500|Pain au chocolat","Naón con alfajor|$11.500"]},
-{id:"desayuno",t:"Desayuno & Meriendas",n:"Adicionales: palta $2.300 · tomates $1.000 · salmón ahumado $10.000 · jamón natural $1.500 · jamón crudo $4.000",i:["Medialuna (70 gr)|$1.700","Medialuna (120 gr)|$2.600","Croissant|$6.300","Roll de canela|$6.100","Alfajor de dulce de leche y nuez|$6.000","Árabe de jamón y queso|$7.000","Cuadradito de lemonie|$4.500","Cuadradito de brownie|$7.500","Cookie de vainilla|$5.200","Cookie de franuí|$5.800","Cookie red velvet|$6.000","Cookie de limón|$6.300","Cookie de frambuesa|$6.300","Medialuna de jamón y queso|$5.200","Croissant de jamón y queso|$8.000","Tostado de jamón y queso|$8.500|Pan de molde","Tostado de jamón y queso x2|$6.100|Pan de miga","Tostado de jamón y queso x4|$8.700|Pan de miga","Chipá|$4.300","Chipá relleno de jamón y queso|$5.500","Yogurt Paulis|$16.500|Frutos de estación y granola","Tostadas con queso crema y mermelada tres berries|$8.500|Pan blanco o integral","Huevos revueltos con tostada integral|$8.000","Avocado toast|$20.000|Pan de campo, queso crema, palta, huevo revuelto y tomates confitados"]},
-{id:"laminados",t:"Laminados",s:"Dulces",i:["Pan de chocolate|$6.800","Medialuna rellena de pastelera / dulce de leche|$6.000","Medialuna rellena de nutella|$7.500","Croissant con nutella & frutos secos|$12.500","Croissant con pastelera & pistacho|$11.000"]},
-{id:"salados",t:"Laminados",s:"Salados",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Croissant Prosciutto|$18.000|Palta, cherry confitada, rúcula, pesto de albahaca, bocconcini y jamón crudo","Croissant Avocado|$17.000|Palta, huevo, tomates cherry confitados y queso crema","Croissant Buenos Aires|$17.000|Jamón natural, queso, huevos revueltos y aderezo sour cream lima","Croque Madame Croissant|$16.500|Jamón natural, queso, pesto de albahaca y huevos"]},
-{id:"pasteleria",t:"Pastelería",i:["Lemon pie|$12.500|Base sablé, curd de limón, merengue italiano","Torta de ricota|$12.500|Suave relleno de ricota con arándanos sobre base de masa sablé y crocante crumble","Frangipane de pistacho|$13.200|Base sablé, frangipane de pistacho, ganache de chocolate blanco y pistacho picado","Chocotorta|$14.000|Tres capas de chocolinas con mezcla cremosa de dulce de leche y queso crema, con ganache de chocolate","Brownie de dulce de leche|$15.000|Dulce de leche y merengue italiano","Cheesecake clásico|$15.500|Base sablé, cheesecake y mermelada de frutos rojos","Key lime pie|$16.000|Base sablé, crema de leche condensada y lima, crema chantilly","Torta Cadbury|$16.500|Base de marquise de chocolate y suave mousse con toques de frutillas y chocolate, con ganache","Marquise de franui|$17.300|Base de chocolate, dulce de leche, crema chantilly y franui","Mousse de dulce de leche|$18.000|Bizcocho húmedo de chocolate, corazón de dulce de leche y mousse"]},
-{id:"panes",t:"Entre Panes",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Focaccia Robert|$20.000|Crema de ciboulette, jamón crudo, bocconcini, hojas verdes y tomates asados","Smoked Salmón|$21.000|Pan de molde semi-integral, salmón ahumado, cremoso de palta, picles de pepinos, huevo y queso crema","Veggie|$16.000|Tostón cremoso de palta, rúcula, tomates asados y huevos","Fungi Tostón|$19.500|Tostón de hongos salteados, rúcula, queso gratín con manteca de hierbas","Italian Tostón|$20.000|Tostón de jamón crudo, bocconcini, rúcula, tomates asados"]},
-{id:"ensaladas",t:"Ensaladas",i:["Caesar|$17.000|Mix de hojas, croutons, queso parmesano, mousse de pollo, aderezo caesar y palta","Paulis|$20.000|Mix de hojas, salmón ahumado, frutos secos, tomates confitados, huevo y aderezo de tres berries"]},
-{id:"singluten",t:"Sin Gluten",i:["Alfajor de chocolate blanco|$5.000","Alfajor de chocolate negro|$5.000","Cuadradito brownie|$10.300","Cuadradito lemonie|$10.000","Árabe de jamón y queso|$12.000","Huevos revueltos con tostadas y dip de queso crema|$11.500"]},
-{id:"bebidas",t:"Bebidas",s:"& Frutales",i:["Licuado frutal|$7.500","Limonada de menta y jengibre|$7.000","Gaseosa línea Coca-Cola|$5.000","Agua mineral con/sin gas|$4.000","Jugo de naranja exprimido|$7.000","Limonadas frutales|$8.500"]},
-{id:"alcohol",t:"Bebidas con Alcohol",i:["Gin tonic|$7.500","Fernet con cola|$7.500","Aperol Spritz|$7.500","Campari|$7.500","Cerveza Corona 0.0 x 330 cc|$6.000","Cerveza Stella Artois x 300 cc|$6.000","Cerveza Stella Artois Noir x 300 cc|$6.000"]}
+{id:"cafeteria",tab:"Cafetería",t:"Cafetería",i:["Lungo|4200","Doppio|4500","Cortado|5000","Americano|4800","Macchiato|5000","Magic|5000","Capuccino|6100","Latte|6500","Flat White|6000","Latte saborizado|7000","Espresso tonic|6000","Submarino|6500","Ice latte vainilla / caramel|7000","Iced latte|6500","Iced flat|5560","Iced tea|5000","Té en hebras|6000"]},
+{id:"combos",tab:"Combos",t:"Combos Paulis",n:"Todos vienen con una rica infusión: té, latte o flat white.",i:["Porteño|8000|Con una medialuna","Buenos Aires|10600|Con un croissant","Porteño con tostadas|15000|Con queso crema, mermelada, pan blanco o integral","Bon appétit con cookie|11000|Vainilla chip, franui, limón, red velvet o frambuesa","Bon appétit con chipá|9200","Parisino|11500|Pain au chocolat","Naón con alfajor|11500"]},
+{id:"desayuno",tab:"Desayuno",t:"Desayuno y meriendas",n:"Adicionales: palta $2.300 · tomates $1.000 · salmón ahumado $10.000 · jamón natural $1.500 · jamón crudo $4.000",i:["Medialuna (70 gr)|1700","Medialuna (120 gr)|2600","Croissant|6300","Roll de canela|6100","Alfajor de dulce de leche y nuez|6000","Árabe de jamón y queso|7000","Cuadradito de lemonie|4500","Cuadradito de brownie|7500","Cookie de vainilla|5200","Cookie de franuí|5800","Cookie red velvet|6000","Cookie de limón|6300","Cookie de frambuesa|6300","Medialuna de jamón y queso|5200","Croissant de jamón y queso|8000","Tostado de jamón y queso|8500|Pan de molde","Tostado de jamón y queso x2|6100|Pan de miga","Tostado de jamón y queso x4|8700|Pan de miga","Chipá|4300","Chipá relleno de jamón y queso|5500","Yogurt Paulis|16500|Frutos de estación y granola","Tostadas con queso crema y mermelada tres berries|8500|Pan blanco o integral","Huevos revueltos con tostada integral|8000","Avocado toast|20000|Pan de campo, queso crema, palta, huevo revuelto y tomates confitados"]},
+{id:"laminados",tab:"Dulces",t:"Laminados",s:"Dulces",i:["Pan de chocolate|6800","Medialuna rellena de pastelera / dulce de leche|6000","Medialuna rellena de nutella|7500","Croissant con nutella y frutos secos|12500","Croissant con pastelera y pistacho|11000"]},
+{id:"salados",tab:"Salados",t:"Laminados",s:"Salados",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Croissant Prosciutto|18000|Palta, cherry confitada, rúcula, pesto de albahaca, bocconcini y jamón crudo","Croissant Avocado|17000|Palta, huevo, tomates cherry confitados y queso crema","Croissant Buenos Aires|17000|Jamón natural, queso, huevos revueltos y aderezo sour cream lima","Croque Madame Croissant|16500|Jamón natural, queso, pesto de albahaca y huevos"]},
+{id:"pasteleria",tab:"Pastelería",t:"Pastelería",i:["Lemon pie|12500|Base sablé, curd de limón, merengue italiano","Torta de ricota|12500|Suave relleno de ricota con arándanos sobre base de masa sablé y crocante crumble","Frangipane de pistacho|13200|Base sablé, frangipane de pistacho, ganache de chocolate blanco y pistacho picado","Chocotorta|14000|Tres capas de chocolinas con mezcla cremosa de dulce de leche y queso crema, con ganache de chocolate","Brownie de dulce de leche|15000|Dulce de leche y merengue italiano","Cheesecake clásico|15500|Base sablé, cheesecake y mermelada de frutos rojos","Key lime pie|16000|Base sablé, crema de leche condensada y lima, crema chantilly","Torta Cadbury|16500|Base de marquise de chocolate y suave mousse con toques de frutillas y chocolate, con ganache","Marquise de franui|17300|Base de chocolate, dulce de leche, crema chantilly y franui","Mousse de dulce de leche|18000|Bizcocho húmedo de chocolate, corazón de dulce de leche y mousse"]},
+{id:"panes",tab:"Entre panes",t:"Entre panes",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Focaccia Robert|20000|Crema de ciboulette, jamón crudo, bocconcini, hojas verdes y tomates asados","Smoked salmón|21000|Pan de molde semi-integral, salmón ahumado, cremoso de palta, picles de pepinos, huevo y queso crema","Veggie|16000|Tostón cremoso de palta, rúcula, tomates asados y huevos","Fungi tostón|19500|Tostón de hongos salteados, rúcula, queso gratín con manteca de hierbas","Italian tostón|20000|Tostón de jamón crudo, bocconcini, rúcula, tomates asados"]},
+{id:"ensaladas",tab:"Ensaladas",t:"Ensaladas",i:["Caesar|17000|Mix de hojas, croutons, queso parmesano, mousse de pollo, aderezo caesar y palta","Paulis|20000|Mix de hojas, salmón ahumado, frutos secos, tomates confitados, huevo y aderezo de tres berries"]},
+{id:"singluten",tab:"Sin gluten",t:"Sin gluten",i:["Alfajor de chocolate blanco|5000","Alfajor de chocolate negro|5000","Cuadradito brownie|10300","Cuadradito lemonie|10000","Árabe de jamón y queso|12000","Huevos revueltos con tostadas y dip de queso crema|11500"]},
+{id:"bebidas",tab:"Bebidas",t:"Bebidas",s:"y frutales",i:["Licuado frutal|7500","Limonada de menta y jengibre|7000","Gaseosa línea Coca-Cola|5000","Agua mineral con/sin gas|4000","Jugo de naranja exprimido|7000","Limonadas frutales|8500"]},
+{id:"alcohol",tab:"Con alcohol",t:"Bebidas con alcohol",i:["Gin tonic|7500","Fernet con cola|7500","Aperol Spritz|7500","Campari|7500","Cerveza Corona 0.0 x 330 cc|6000","Cerveza Stella Artois x 300 cc|6000","Cerveza Stella Artois Noir x 300 cc|6000"]}
 ];
-const chipNames={cafeteria:"Cafetería",combos:"Combos",desayuno:"Desayuno",laminados:"Dulces",salados:"Salados",pasteleria:"Pastelería",panes:"Entre panes",ensaladas:"Ensaladas",singluten:"Sin gluten",bebidas:"Bebidas",alcohol:"Con alcohol"};
-const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
-document.getElementById("menu").innerHTML=MENU.map(m=>`<div class="msec" id="${m.id}"><h2>${esc(m.t)}</h2>${m.s?`<div class="sub">${esc(m.s)}</div>`:""}${m.n?`<p class="note">${esc(m.n)}</p>`:""}<div class="list">${m.i.map(x=>{const [n,p,d]=x.split("|");return `<div class="it"><div class="row"><span class="n">${esc(n)}</span><span class="dots"></span><span class="p">${p}</span></div>${d?`<div class="d">${esc(d)}</div>`:""}</div>`}).join("")}</div></div>`).join("");
-document.getElementById("chips").innerHTML=MENU.map(m=>`<button data-id="${m.id}">${chipNames[m.id]}</button>`).join("");
-// pestañas: una categoría a la vez
-const tabs=[...document.querySelectorAll("#chips button")],secs=[...document.querySelectorAll(".msec")];
-function show(id){tabs.forEach(b=>b.classList.toggle("on",b.dataset.id===id));secs.forEach(x=>x.classList.toggle("on",x.id===id))}
-tabs.forEach(b=>b.onclick=()=>show(b.dataset.id));show("cafeteria");
-// Visitanos + footer
-const mp="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Paulis "+INFO.address);
+const FAVS=["Croissant Prosciutto","Mousse de dulce de leche","Buenos Aires"];
+
+/* Utilidades */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money=n=>"$"+new Intl.NumberFormat("es-AR").format(n);
+const parse=(s,cat)=>{const [n,p,d=""]=s.split("|");return{n,p:+p,d,cat}};
+const items=MENU.flatMap(m=>m.i.map(s=>parse(s,m.id)));
+const mapsUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(INFO.name+" "+INFO.address);
+const waUrl=INFO.whatsapp?`https://wa.me/${INFO.whatsapp}?text=${encodeURIComponent(INFO.waText)}`:"";
+
+/* Carta con pestañas accesibles */
+$("menu").innerHTML=MENU.map(m=>`<section class="msec" id="panel-${m.id}" role="tabpanel" aria-labelledby="tab-${m.id}" tabindex="0"><h3>${esc(m.t)}</h3>${m.s?`<p class="sub">${esc(m.s)}</p>`:""}${m.n?`<p class="note">${esc(m.n)}</p>`:""}<ul class="list">${m.i.map(x=>{const{n,p,d}=parse(x);return`<li class="it"><div class="row"><span class="n">${esc(n)}</span><span class="dots" aria-hidden="true"></span><span class="p">${money(p)}</span></div>${d?`<div class="d">${esc(d)}</div>`:""}</li>`}).join("")}</ul></section>`).join("");
+$("tabs").innerHTML=MENU.map(m=>`<button role="tab" id="tab-${m.id}" aria-controls="panel-${m.id}" data-id="${m.id}">${esc(m.tab)}</button>`).join("");
+const tabs=[...document.querySelectorAll("#tabs button")],panels=[...document.querySelectorAll(".msec")];
+function show(id,focus){
+  tabs.forEach(b=>{const on=b.dataset.id===id;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  panels.forEach(p=>p.classList.toggle("on",p.id==="panel-"+id));
+}
+tabs.forEach((b,i)=>{
+  b.addEventListener("click",()=>show(b.dataset.id));
+  b.addEventListener("keydown",e=>{
+    const k={ArrowRight:1,ArrowLeft:-1}[e.key];
+    if(k){e.preventDefault();show(tabs[(i+k+tabs.length)%tabs.length].dataset.id,true)}
+    if(e.key==="Home"){e.preventDefault();show(tabs[0].dataset.id,true)}
+    if(e.key==="End"){e.preventDefault();show(tabs.at(-1).dataset.id,true)}
+  });
+});
+const start=MENU.find(m=>"#"+m.id===location.hash);
+show(start?start.id:MENU[0].id);
+if(start)requestAnimationFrame(()=>$("carta").scrollIntoView());
+
+/* Favoritos (precio y descripción salen de la carta, sin duplicar datos) */
+$("favs").innerHTML=FAVS.map(n=>items.find(x=>x.n===n)).filter(Boolean).map(x=>`<div class="card"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p><b>${money(x.p)}</b></div>`).join("");
+
+/* Visitanos y footer */
 const [a1,...a2]=INFO.address.split(", ");
-document.getElementById("vinfo").innerHTML=(INFO.address?`<h3>${esc(a1)}</h3><p>${esc(a2.join(", "))}</p>`:"")
-+(INFO.hours.length?`<table>${INFO.hours.map(h=>`<tr><td>${esc(h[0])}</td><td>${esc(h[1])}</td></tr>`).join("")}</table>`:"")
-+`<div class="vb">${INFO.address?`<a class="f" target="_blank" rel="noopener" href="${mp}">Cómo llegar</a>`:""}${INFO.whatsapp?`<a target="_blank" rel="noopener" href="https://wa.me/${INFO.whatsapp}">WhatsApp</a>`:""}${INFO.instagram?`<a target="_blank" rel="noopener" href="https://instagram.com/${INFO.instagram}">Instagram</a>`:""}</div>`;
-if(!INFO.address)document.getElementById("mapbox").style.display="none";
-document.getElementById("faddr").textContent=INFO.address;
-if(INFO.instagram){const g=document.getElementById("fig");g.href="https://instagram.com/"+INFO.instagram;g.textContent="@"+INFO.instagram}
-if(INFO.dev)document.getElementById("dev").href=INFO.dev;
-if(INFO.whatsapp){const w=document.getElementById("wa");w.href="https://wa.me/"+INFO.whatsapp;w.style.display="flex"}
-if(INFO.address)document.getElementById("mapbox").innerHTML=`<iframe title="Mapa" loading="lazy" src="https://www.google.com/maps?q=${encodeURIComponent("Paulis "+INFO.address)}&output=embed"></iframe>`;
-if(INFO.instagram){const b=document.getElementById("igBtn");b.href="https://instagram.com/"+INFO.instagram;b.style.display="inline-block"}
-document.getElementById("gal").innerHTML=GALLERY.map(f=>`<img src="${f}" alt="Paulis" loading="lazy">`).join("");
-if(INFO.address)document.getElementById("mapBtn").href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Paulis "+INFO.address);
-// estado abierto/cerrado
-if(INFO.hours.length){const d=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Argentina/Buenos_Aires"}));const h=d.getHours()+d.getMinutes()/60,o=h>=INFO.open&&h<INFO.close;document.getElementById("open").innerHTML=`<i class="dot ${o?"g":"r"}"></i>${o?"Abierto ahora · hasta las "+INFO.close+" hs":"Cerrado ahora · abrimos a las "+INFO.open+" hs"}`}
-if(INFO.whatsapp){const n=document.getElementById("navwa");n.href="https://wa.me/"+INFO.whatsapp;n.style.display="inline-block"}
-// animación al hacer scroll
-const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll(".vpanel,.card,.sec-title,.about .big,.about .lead,#menu,#mapbox").forEach(e=>{e.classList.add("rv");rv.observe(e)});
+$("vinfo").innerHTML=(INFO.address?`<h3>${esc(a1)}</h3><p>${esc(a2.join(", "))}</p>`:"")
+ +(INFO.hours.length?`<table><caption class="sr" hidden>Horarios</caption>${INFO.hours.map(h=>`<tr><td>${esc(h[0])}</td><td>${esc(h[1])}</td></tr>`).join("")}</table>`:"")
+ +`<div class="vb">${INFO.address?`<a class="f" target="_blank" rel="noopener" href="${mapsUrl}">Cómo llegar</a>`:""}${waUrl?`<a target="_blank" rel="noopener" href="${waUrl}">WhatsApp</a>`:""}${INFO.instagram?`<a target="_blank" rel="noopener" href="https://instagram.com/${esc(INFO.instagram)}">Instagram</a>`:""}</div>`;
+if(INFO.address){
+  $("mapbox").innerHTML=`<iframe title="Mapa de ${esc(INFO.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(INFO.name+" "+INFO.address)}&output=embed"></iframe>`;
+  $("mapBtn").href=mapsUrl;$("mapBtn").target="_blank";$("mapBtn").rel="noopener";
+}else $("mapbox").hidden=true;
+$("faddr").textContent=INFO.address;
+$("yr").textContent=new Date().getFullYear();
+if(INFO.instagram){
+  const url="https://instagram.com/"+INFO.instagram;
+  $("fig").href=url;$("fig").textContent="@"+INFO.instagram;$("fig").hidden=false;
+  $("igBtn").href=url;$("igBtn").hidden=false;
+}
+if(INFO.dev)$("dev").href=INFO.dev;else $("dev").removeAttribute("href");
+if(waUrl){$("wa").href=waUrl;$("wa").style.display="flex";$("navwa").href=waUrl;$("navwa").hidden=false}
+$("gal").innerHTML=GALLERY.map(f=>`<img src="${esc(f)}" alt="Paulis" loading="lazy" width="400" height="400">`).join("");
+
+/* Estado abierto/cerrado con la hora de Buenos Aires */
+if(INFO.hours.length){
+  const parts=new Intl.DateTimeFormat("en-GB",{timeZone:INFO.tz,hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+  const h=+parts.find(p=>p.type==="hour").value%24+ +parts.find(p=>p.type==="minute").value/60;
+  const o=h>=INFO.open&&h<INFO.close;
+  $("open").innerHTML=`<i class="dot ${o?"g":"r"}"></i>${o?`Abierto ahora · hasta las ${INFO.close} hs`:`Cerrado ahora · abrimos a las ${INFO.open} hs`}`;
+}
+
+/* Datos estructurados para Google */
+const ld={"@context":"https://schema.org","@type":"Bakery",name:INFO.name,servesCuisine:["Pastelería","Café","Laminados"],hasMenu:INFO.pdf,
+  address:{"@type":"PostalAddress",streetAddress:a1,addressLocality:"Buenos Aires",addressCountry:"AR"},
+  openingHoursSpecification:[{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],opens:String(INFO.open).padStart(2,"0")+":00",closes:String(INFO.close).padStart(2,"0")+":00"}]};
+if(INFO.instagram)ld.sameAs=["https://instagram.com/"+INFO.instagram];
+const s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.append(s);
+
+/* Revelado al scroll */
+if("IntersectionObserver" in window){
+  const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll(".vpanel,.about .card,.feat .card,.sec-title,.about .big,.about .lead,#menu").forEach(e=>{e.classList.add("rv");rv.observe(e)});
+}
 </script>
 </body>
 </html>
