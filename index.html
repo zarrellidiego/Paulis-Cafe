@@ -59,7 +59,7 @@ nav .navwa:hover{color:#fff;background:#375a4e}
 .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#e3f1f5 0%,#fff 60%)}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:48px;padding-bottom:70px}
 .hero h1{font-size:clamp(4rem,11vw,6.6rem);line-height:.95;color:var(--blue-d)}
-.hero .sub{letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;font-weight:600;color:var(--sage-d);margin:8px 0 18px}
+.hero .sub{letter-spacing:.14em;font-size:.95rem;font-weight:600;color:var(--sage-d);margin:8px 0 18px}
 .hero p.lead{max-width:420px;margin-bottom:26px}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 .open{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.78rem;font-weight:600;margin-bottom:18px}
@@ -79,19 +79,14 @@ nav .navwa:hover{color:#fff;background:#375a4e}
 .hero .wrap>div:first-child>*:nth-child(5){animation-delay:.4s}
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-.band{background:var(--blue-d);color:#fff;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;padding:14px 20px;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
-.band i{font-style:normal;color:#f1c48f}
 
 /* Secciones y tarjetas */
-.sec-title{display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--sage-d);font-size:1.05rem;margin-bottom:26px}
-.sec-title::before,.sec-title::after{content:"";height:1px;width:48px;background:#8fb3a8}
+.sec-title{text-align:center;font:400 clamp(2.4rem,6vw,3.2rem)/1 Sacramento,cursive;color:var(--blue-d);margin-bottom:22px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;text-align:center;transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(86,129,159,.18)}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;text-align:center}
 .card h3{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d)}
 .card p{font-size:.85rem;margin:8px 0 12px}
 .card b{color:var(--tan);font-size:1.15rem}
-.card .ic{font-size:2rem;margin-bottom:6px}
 .about{padding:64px 0 8px;text-align:center}
 .about .big{font-size:3.2rem;color:var(--blue-d);line-height:1}
 .about .lead{max-width:520px;margin:8px auto 28px}
@@ -102,15 +97,18 @@ nav .navwa:hover{color:#fff;background:#375a4e}
 
 /* Carta */
 .menu{padding:48px 0;background:linear-gradient(#fff,var(--soft) 40%,#fff)}
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 20px 18px}
+.tabs{position:sticky;top:var(--head);z-index:15;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 20px;margin-bottom:18px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;white-space:nowrap}
+.tabs button:first-child{margin-left:auto}.tabs button:last-child{margin-right:auto}
 .tabs button{font:inherit;font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:99px;border:0;background:#e6eff4;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
 .tabs button:hover{background:var(--blue)}
 .tabs button[aria-selected="true"]{background:var(--blue-d);color:#fff}
 #menu{max-width:1000px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 14px 44px rgba(86,129,159,.12);padding:6px 32px 34px}
 .msec{display:none;padding-top:28px}
 .msec.on{display:block;animation:up .5s both}
-.msec h3{text-align:center;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-d);font-size:1.1rem}
-.msec .sub{text-align:center;color:var(--blue-d);font-style:italic;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;margin-top:2px}
+.msec h3{text-align:center;font-weight:600;color:var(--sage-d);font-size:1.5rem}
+.msec .sub{text-align:center;color:var(--blue-d);font-style:italic;font-size:.9rem}
 .note{text-align:center;font-size:.82rem;font-style:italic;margin:12px auto 0;max-width:560px;color:var(--muted)}
 .list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:22px}
 .it{padding:8px 10px;border-radius:var(--r-sm);transition:background .2s}
@@ -122,6 +120,15 @@ nav .navwa:hover{color:#fff;background:#375a4e}
 .it .d{font-size:.78rem;color:var(--muted);font-style:italic;margin-top:1px}
 .pdf{text-align:center;margin-top:30px}
 
+.srch{display:block;max-width:520px;margin:0 auto 14px;padding:0 20px;position:relative}
+.srch input{width:100%;font:inherit;font-size:.95rem;padding:13px 20px;border:2px solid var(--line);border-radius:99px;background:#fff;color:var(--ink)}
+.srch input:focus{outline:none;border-color:var(--blue-d);box-shadow:0 0 0 4px rgba(74,117,147,.15)}
+.sr{position:absolute;left:-999px}
+#results{display:none;padding-top:28px}
+.searching #results{display:block}
+.searching .msec{display:none!important}
+.searching .tabs{opacity:.45}
+.it .cat{color:var(--sage-d);font-style:normal;font-weight:600}
 /* Visitanos */
 .visit{padding:20px 0 70px}
 .vpanel{background:var(--panel);color:#fff;border-radius:var(--r-lg);padding:56px 28px;text-align:center}
@@ -208,16 +215,10 @@ footer .made a{color:var(--sand);text-decoration:underline;text-underline-offset
 <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,40 L1440,80 L0,80Z" fill="#a7c0d3" opacity=".3"/></svg>
 </section>
 
-<div class="band" aria-hidden="true"><span>Laminados</span><i>✦</i><span>Café</span><i>✦</i><span>Pastelería</span><i>✦</i><span>Elaboración propia</span></div>
 
 <section class="about" id="nosotros"><div class="wrap">
   <p class="script big">Elaboración propia</p>
   <p class="lead">Laminados, café y pastelería hechos en casa. Pasá a desayunar, merendar o llevarte algo rico.</p>
-  <div class="cards">
-    <div class="card"><div class="ic" aria-hidden="true">🥐</div><h3>Laminados</h3><p>Medialunas, croissants y pan de chocolate, dulces y salados.</p></div>
-    <div class="card"><div class="ic" aria-hidden="true">☕</div><h3>Café</h3><p>Del lungo al flat white, calientes o fríos.</p></div>
-    <div class="card"><div class="ic" aria-hidden="true">🍰</div><h3>Pastelería</h3><p>Tortas, tartas y postres, con opciones sin gluten.</p></div>
-  </div>
   <div class="gal" id="gal"></div>
   <p style="margin-top:26px"><a class="btn main" id="igBtn" target="_blank" rel="noopener" hidden>Seguinos en Instagram</a></p>
 </div></section>
@@ -229,6 +230,7 @@ footer .made a{color:var(--sand);text-decoration:underline;text-underline-offset
 
 <section class="menu" id="carta" aria-labelledby="cartaT">
   <div class="wrap"><h2 class="sec-title" id="cartaT">Carta</h2></div>
+  <label class="srch"><span class="sr">Buscar en la carta</span><input id="q" type="search" placeholder="Buscá en la carta: medialuna, torta, sin gluten…" autocomplete="off"></label>
   <div class="tabs" id="tabs" role="tablist" aria-label="Categorías de la carta"></div>
   <div class="wrap" id="menu"></div>
   <p class="pdf"><a class="btn main" href="https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view" target="_blank" rel="noopener">Ver carta completa en PDF</a></p>
@@ -296,13 +298,14 @@ const waUrl=INFO.whatsapp?`https://wa.me/${INFO.whatsapp}?text=${encodeURICompon
 /* Carta con pestañas accesibles */
 $("menu").innerHTML=MENU.map(m=>`<section class="msec" id="panel-${m.id}" role="tabpanel" aria-labelledby="tab-${m.id}" tabindex="0"><h3>${esc(m.t)}</h3>${m.s?`<p class="sub">${esc(m.s)}</p>`:""}${m.n?`<p class="note">${esc(m.n)}</p>`:""}<ul class="list">${m.i.map(x=>{const{n,p,d}=parse(x);return`<li class="it"><div class="row"><span class="n">${esc(n)}</span><span class="dots" aria-hidden="true"></span><span class="p">${money(p)}</span></div>${d?`<div class="d">${esc(d)}</div>`:""}</li>`}).join("")}</ul></section>`).join("");
 $("tabs").innerHTML=MENU.map(m=>`<button role="tab" id="tab-${m.id}" aria-controls="panel-${m.id}" data-id="${m.id}">${esc(m.tab)}</button>`).join("");
+const q=document.getElementById('q');
 const tabs=[...document.querySelectorAll("#tabs button")],panels=[...document.querySelectorAll(".msec")];
 function show(id,focus){
   tabs.forEach(b=>{const on=b.dataset.id===id;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
   panels.forEach(p=>p.classList.toggle("on",p.id==="panel-"+id));
 }
 tabs.forEach((b,i)=>{
-  b.addEventListener("click",()=>show(b.dataset.id));
+  b.addEventListener("click",()=>{q.value="";document.body.classList.remove("searching");show(b.dataset.id);b.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"})});
   b.addEventListener("keydown",e=>{
     const k={ArrowRight:1,ArrowLeft:-1}[e.key];
     if(k){e.preventDefault();show(tabs[(i+k+tabs.length)%tabs.length].dataset.id,true)}
@@ -313,6 +316,18 @@ tabs.forEach((b,i)=>{
 const start=MENU.find(m=>"#"+m.id===location.hash);
 show(start?start.id:MENU[0].id);
 if(start)requestAnimationFrame(()=>$("carta").scrollIntoView());
+
+/* Buscador: filtra todas las categorías a la vez, sin tildes */
+const catName=Object.fromEntries(MENU.map(m=>[m.id,m.t+(m.s?" · "+m.s:"")]));
+const norm=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+$("menu").insertAdjacentHTML("beforeend",'<section id="results" aria-live="polite"></section>');
+q.addEventListener("input",()=>{
+  const v=norm(q.value.trim());
+  document.body.classList.toggle("searching",!!v);
+  if(!v)return;
+  const hit=items.filter(x=>norm(x.n+" "+x.d+" "+catName[x.cat]).includes(v));
+  $("results").innerHTML=hit.length?`<ul class="list">${hit.map(x=>`<li class="it"><div class="row"><span class="n">${esc(x.n)}</span><span class="dots" aria-hidden="true"></span><span class="p">${money(x.p)}</span></div><div class="d"><span class="cat">${esc(catName[x.cat])}</span>${x.d?" · "+esc(x.d):""}</div></li>`).join("")}</ul>`:`<p class="note">No encontramos “${esc(q.value)}”. Probá con otra palabra o elegí una categoría.</p>`;
+});
 
 /* Favoritos (precio y descripción salen de la carta, sin duplicar datos) */
 $("favs").innerHTML=FAVS.map(n=>items.find(x=>x.n===n)).filter(Boolean).map(x=>`<div class="card"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p><b>${money(x.p)}</b></div>`).join("");
@@ -355,7 +370,7 @@ const s=document.createElement("script");s.type="application/ld+json";s.textCont
 /* Revelado al scroll */
 if("IntersectionObserver" in window){
   const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll(".vpanel,.about .card,.feat .card,.sec-title,.about .big,.about .lead,#menu").forEach(e=>{e.classList.add("rv");rv.observe(e)});
+  document.querySelectorAll(".vpanel").forEach(e=>{e.classList.add("rv");rv.observe(e)});
 }
 </script>
 </body>
