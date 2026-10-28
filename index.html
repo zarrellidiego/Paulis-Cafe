@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paulis · Pastelería, Laminados y Café</title>
+<meta name="description" content="Paulis: laminados, pastelería y café. Mirá la carta completa: medialunas, croissants, tortas, desayunos, combos y más.">
+<meta property="og:title" content="Paulis · Laminados y Café">
+<meta property="og:description" content="Laminados, pastelería y café. Mirá la carta completa.">
+<meta property="og:image" content="hero.jpg">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#a7c0d3;--blue-d:#56819f;--sage:#8fb3a8;--sage-d:#4d7a6c;--tan:#d9a15f;--ink:#34454f;--soft:#f3f8fa;--line:#dbe6ec}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.script{font-family:Sacramento,cursive;font-weight:400}
+.btn{display:inline-block;padding:12px 24px;border-radius:99px;font-weight:600;font-size:.9rem;transition:.2s}
+.btn.main{background:var(--blue-d);color:#fff}.btn.main:hover{background:#43708d}
+.btn.alt{border:2px solid var(--blue-d);color:var(--blue-d)}.btn.alt:hover{background:var(--blue-d);color:#fff}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-size:1.9rem;color:var(--blue-d)}
+.brand img{width:38px;height:38px;border-radius:50%}
+nav a{margin-left:22px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+nav a:hover{color:var(--blue-d)}
+.hero{background:linear-gradient(160deg,#e3f1f5 0%,#fff 60%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:48px;padding-bottom:48px}
+.hero h1{font-size:clamp(4rem,11vw,6.6rem);line-height:.95;color:var(--blue-d)}
+.hero .sub{letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;font-weight:600;color:var(--sage-d);margin:8px 0 18px}
+.hero p{max-width:420px;margin-bottom:26px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero img.ph{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 24px 24px;box-shadow:0 20px 50px rgba(86,129,159,.25)}
+.sec-title{text-align:center;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--sage-d);font-size:1.05rem;margin-bottom:26px}
+.sec-title:before{content:"[ "}.sec-title:after{content:" ]"}
+.feat{padding:64px 0 24px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}
+.card h3{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d)}
+.card p{font-size:.85rem;margin:8px 0 12px;min-height:60px}
+.card b{color:var(--tan);font-size:1.15rem}
+.menu{padding:48px 0}
+.chips{position:sticky;top:60px;z-index:15;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px 20px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{display:inline-block;margin-right:6px;padding:7px 14px;border-radius:99px;font-size:.78rem;font-weight:600;background:var(--soft);color:var(--ink)}
+.chips a.on{background:var(--blue-d);color:#fff}
+.msec{padding-top:44px}
+.msec h2{text-align:center;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-d);font-size:1.1rem}
+.msec h2:before{content:"[ "}.msec h2:after{content:" ]"}
+.msec .sub{text-align:center;color:var(--blue-d);font-style:italic;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;margin-top:2px}
+.note{text-align:center;font-size:.82rem;font-style:italic;margin:12px auto 0;max-width:560px;color:#5d7380}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:22px}
+.it .row{display:flex;align-items:baseline;gap:8px}
+.it .n{font-weight:600;font-size:.92rem}
+.it .dots{flex:1;border-bottom:2px dotted var(--blue);transform:translateY(-4px)}
+.it .p{font-weight:700;color:var(--blue-d);white-space:nowrap;font-size:.92rem}
+.it .d{font-size:.78rem;color:#667c88;font-style:italic;margin-top:1px}
+.it{padding:8px 0}
+.visit{background:var(--soft);padding:60px 0;margin-top:40px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;text-align:center}
+.vgrid .card{background:#fff}
+.vgrid h3{margin-bottom:8px}
+.vgrid p{min-height:0;margin:0}
+footer{padding:32px 0;text-align:center;font-size:.8rem;color:#667c88}
+footer .script{font-size:2rem;color:var(--blue-d);display:block}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);font-weight:700;font-size:.72rem}
+@media(max-width:760px){
+ nav a:not(.keep){display:none}
+ .hero .wrap{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.hero .cta{justify-content:center}
+ .hero img.ph{max-width:340px;margin:0 auto}
+ .cards,.list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a href="#top" class="brand script"><img src="logo.png" alt="Logo Paulis">Paulis</a>
+ <nav><a href="#carta">Carta</a><a href="#visitanos" class="keep">Visitanos</a></nav>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+ <div>
+  <h1 class="script">Paulis</h1>
+  <div class="sub">Pastelería · Laminados y Café</div>
+  <p>Medialunas, croissants, tortas y café para arrancar bien el día o cortar la tarde con algo rico.</p>
+  <div class="cta"><a class="btn main" href="#carta">Ver la carta</a><a class="btn alt" id="mapBtn" href="#visitanos">Cómo llegar</a></div>
+ </div>
+ <img class="ph" src="hero.jpg" alt="Café con medialuna y jugo de naranja en Paulis">
+</div></section>
+
+<section class="feat"><div class="wrap">
+ <div class="sec-title">Favoritos</div>
+ <div class="cards">
+  <div class="card"><h3>Croissant Prosciutto</h3><p>Palta, cherry confitada, rúcula, pesto de albahaca, bocconcini y jamón crudo.</p><b>$18.000</b></div>
+  <div class="card"><h3>Mousse de dulce de leche</h3><p>Bizcocho húmedo de chocolate, corazón de dulce de leche y mousse.</p><b>$18.000</b></div>
+  <div class="card"><h3>Combo Buenos Aires</h3><p>Un croissant con una rica infusión: té, latte o flat white.</p><b>$10.600</b></div>
+ </div>
+</div></section>
+
+<section class="menu" id="carta">
+ <div class="wrap"><div class="sec-title">Carta</div></div>
+ <div class="chips" id="chips"></div>
+ <div class="wrap" id="menu"></div>
+</section>
+
+<section class="visit" id="visitanos"><div class="wrap">
+ <div class="sec-title">Visitanos</div>
+ <div class="vgrid" id="visit"></div>
+</div></section>
+
+<footer><div class="wrap"><span class="script">Paulis</span>Pastelería · Laminados y Café<br>Los precios pueden cambiar sin previo aviso.</div></footer>
+<a class="wa" id="wa" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+// ✏️ DATOS DEL LOCAL: completá lo que tengas. Lo que dejes vacío no se muestra.
+const INFO={
+ address:"",            // ej: "Calle 123, Ciudad"
+ hours:[],              // ej: ["Lunes a viernes: 8 a 20 hs","Sábados y domingos: 9 a 21 hs"]
+ whatsapp:"",           // solo números con código de país, ej: "5491122334455"
+ instagram:""           // usuario sin @, ej: "paulis.pasteleria"
+};
+
+// Carta: "Nombre|Precio|Descripción (opcional)"
+const MENU=[
+{id:"cafeteria",t:"Cafetería",i:["Lungo|$4.200","Doppio|$4.500","Cortado|$5.000","Americano|$4.800","Macchiato|$5.000","Magic|$5.000","Capuccino|$6.100","Latte|$6.500","Flat White|$6.000","Latte Saborizado|$7.000","Espresso Tonic|$6.000","Submarino|$6.500","Ice Latte Vainilla / Caramel|$7.000","Iced Latte|$6.500","Iced Flat|$5.560","Iced Tea|$5.000","Té en Hebras|$6.000"]},
+{id:"combos",t:"Combos Paulis",n:"Todos vienen con una rica infusión: té, latte o flat white.",i:["Porteño|$8.000|Con una medialuna","Buenos Aires|$10.600|Con un croissant","Porteño con tostadas|$15.000|Con queso crema, mermelada, pan blanco o integral","Bon appétit con cookie|$11.000|Vainilla chip, franui, limón, red velvet o frambuesa","Bon appétit con chipá|$9.200","Parisino|$11.500|Pain au chocolat","Naón con alfajor|$11.500"]},
+{id:"desayuno",t:"Desayuno & Meriendas",n:"Adicionales: palta $2.300 · tomates $1.000 · salmón ahumado $10.000 · jamón natural $1.500 · jamón crudo $4.000",i:["Medialuna (70 gr)|$1.700","Medialuna (120 gr)|$2.600","Croissant|$6.300","Roll de canela|$6.100","Alfajor de dulce de leche y nuez|$6.000","Árabe de jamón y queso|$7.000","Cuadradito de lemonie|$4.500","Cuadradito de brownie|$7.500","Cookie de vainilla|$5.200","Cookie de franuí|$5.800","Cookie red velvet|$6.000","Cookie de limón|$6.300","Cookie de frambuesa|$6.300","Medialuna de jamón y queso|$5.200","Croissant de jamón y queso|$8.000","Tostado de jamón y queso|$8.500|Pan de molde","Tostado de jamón y queso x2|$6.100|Pan de miga","Tostado de jamón y queso x4|$8.700|Pan de miga","Chipá|$4.300","Chipá relleno de jamón y queso|$5.500","Yogurt Paulis|$16.500|Frutos de estación y granola","Tostadas con queso crema y mermelada tres berries|$8.500|Pan blanco o integral","Huevos revueltos con tostada integral|$8.000","Avocado toast|$20.000|Pan de campo, queso crema, palta, huevo revuelto y tomates confitados"]},
+{id:"laminados",t:"Laminados",s:"Dulces",i:["Pan de chocolate|$6.800","Medialuna rellena de pastelera / dulce de leche|$6.000","Medialuna rellena de nutella|$7.500","Croissant con nutella & frutos secos|$12.500","Croissant con pastelera & pistacho|$11.000"]},
+{id:"salados",t:"Laminados",s:"Salados",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Croissant Prosciutto|$18.000|Palta, cherry confitada, rúcula, pesto de albahaca, bocconcini y jamón crudo","Croissant Avocado|$17.000|Palta, huevo, tomates cherry confitados y queso crema","Croissant Buenos Aires|$17.000|Jamón natural, queso, huevos revueltos y aderezo sour cream lima","Croque Madame Croissant|$16.500|Jamón natural, queso, pesto de albahaca y huevos"]},
+{id:"pasteleria",t:"Pastelería",i:["Lemon pie|$12.500|Base sablé, curd de limón, merengue italiano","Torta de ricota|$12.500|Suave relleno de ricota con arándanos sobre base de masa sablé y crocante crumble","Frangipane de pistacho|$13.200|Base sablé, frangipane de pistacho, ganache de chocolate blanco y pistacho picado","Chocotorta|$14.000|Tres capas de chocolinas con mezcla cremosa de dulce de leche y queso crema, con ganache de chocolate","Brownie de dulce de leche|$15.000|Dulce de leche y merengue italiano","Cheesecake clásico|$15.500|Base sablé, cheesecake y mermelada de frutos rojos","Key lime pie|$16.000|Base sablé, crema de leche condensada y lima, crema chantilly","Torta Cadbury|$16.500|Base de marquise de chocolate y suave mousse con toques de frutillas y chocolate, con ganache","Marquise de franui|$17.300|Base de chocolate, dulce de leche, crema chantilly y franui","Mousse de dulce de leche|$18.000|Bizcocho húmedo de chocolate, corazón de dulce de leche y mousse"]},
+{id:"panes",t:"Entre Panes",n:"Salsas opcionales: queso crema, queso lima (sour cream lima), crema ciboulette, cremoso de palta.",i:["Focaccia Robert|$20.000|Crema de ciboulette, jamón crudo, bocconcini, hojas verdes y tomates asados","Smoked Salmón|$21.000|Pan de molde semi-integral, salmón ahumado, cremoso de palta, picles de pepinos, huevo y queso crema","Veggie|$16.000|Tostón cremoso de palta, rúcula, tomates asados y huevos","Fungi Tostón|$19.500|Tostón de hongos salteados, rúcula, queso gratín con manteca de hierbas","Italian Tostón|$20.000|Tostón de jamón crudo, bocconcini, rúcula, tomates asados"]},
+{id:"ensaladas",t:"Ensaladas",i:["Caesar|$17.000|Mix de hojas, croutons, queso parmesano, mousse de pollo, aderezo caesar y palta","Paulis|$20.000|Mix de hojas, salmón ahumado, frutos secos, tomates confitados, huevo y aderezo de tres berries"]},
+{id:"singluten",t:"Sin Gluten",i:["Alfajor de chocolate blanco|$5.000","Alfajor de chocolate negro|$5.000","Cuadradito brownie|$10.300","Cuadradito lemonie|$10.000","Árabe de jamón y queso|$12.000","Huevos revueltos con tostadas y dip de queso crema|$11.500"]},
+{id:"bebidas",t:"Bebidas",s:"& Frutales",i:["Licuado frutal|$7.500","Limonada de menta y jengibre|$7.000","Gaseosa línea Coca-Cola|$5.000","Agua mineral con/sin gas|$4.000","Jugo de naranja exprimido|$7.000","Limonadas frutales|$8.500"]},
+{id:"alcohol",t:"Bebidas con Alcohol",i:["Gin tonic|$7.500","Fernet con cola|$7.500","Aperol Spritz|$7.500","Campari|$7.500","Cerveza Corona 0.0 x 330 cc|$6.000","Cerveza Stella Artois x 300 cc|$6.000","Cerveza Stella Artois Noir x 300 cc|$6.000"]}
+];
+const chipNames={cafeteria:"Cafetería",combos:"Combos",desayuno:"Desayuno",laminados:"Dulces",salados:"Salados",pasteleria:"Pastelería",panes:"Entre panes",ensaladas:"Ensaladas",singluten:"Sin gluten",bebidas:"Bebidas",alcohol:"Con alcohol"};
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+document.getElementById("menu").innerHTML=MENU.map(m=>`<div class="msec" id="${m.id}"><h2>${esc(m.t)}</h2>${m.s?`<div class="sub">${esc(m.s)}</div>`:""}${m.n?`<p class="note">${esc(m.n)}</p>`:""}<div class="list">${m.i.map(x=>{const [n,p,d]=x.split("|");return `<div class="it"><div class="row"><span class="n">${esc(n)}</span><span class="dots"></span><span class="p">${p}</span></div>${d?`<div class="d">${esc(d)}</div>`:""}</div>`}).join("")}</div></div>`).join("");
+document.getElementById("chips").innerHTML=MENU.map(m=>`<a href="#${m.id}">${chipNames[m.id]}</a>`).join("");
+// resaltar categoría activa
+const links=[...document.querySelectorAll("#chips a")];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id));const a=document.querySelector("#chips a.on");a&&a.scrollIntoView({inline:"center",block:"nearest"})}}),{rootMargin:"-120px 0px -70% 0px"});
+document.querySelectorAll(".msec").forEach(s=>io.observe(s));
+// info del local
+const v=[];
+if(INFO.address)v.push(`<div class="card"><h3>Dónde estamos</h3><p>${esc(INFO.address)}</p><a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Paulis "+INFO.address)}">Abrir en Maps</a></div>`);
+if(INFO.hours.length)v.push(`<div class="card"><h3>Horarios</h3><p>${INFO.hours.map(esc).join("<br>")}</p></div>`);
+if(INFO.instagram)v.push(`<div class="card"><h3>Instagram</h3><p>@${esc(INFO.instagram)}</p><a class="btn alt" target="_blank" rel="noopener" href="https://instagram.com/${INFO.instagram}">Seguinos</a></div>`);
+if(INFO.whatsapp)v.push(`<div class="card"><h3>Escribinos</h3><p>Consultas y pedidos por WhatsApp.</p><a class="btn alt" target="_blank" rel="noopener" href="https://wa.me/${INFO.whatsapp}">WhatsApp</a></div>`);
+if(!v.length)document.getElementById("visitanos").style.display="none";
+document.getElementById("visit").innerHTML=v.join("");
+if(INFO.whatsapp){const w=document.getElementById("wa");w.href="https://wa.me/"+INFO.whatsapp;w.style.display="flex"}
+if(INFO.address)document.getElementById("mapBtn").href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Paulis "+INFO.address);
+</script>
+</body>
+</html>
