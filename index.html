@@ -113,6 +113,27 @@ footer{background:#2f4756;color:#c9dbe6;margin-top:0;padding:44px 0}footer .scri
 .visit{margin-top:0}
 @media(max-width:760px){.chip{left:6px}.phw:before{inset:-12px -8px 12px 8px}.navwa{display:none!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.wa{width:58px;height:58px;background:#25d366;box-shadow:0 8px 22px rgba(37,211,102,.45);transition:.2s}.wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+.visit{padding:20px 0 70px;background:#fff;margin:0}
+.vpanel{background:#4b7592;color:#fff;border-radius:36px;padding:56px 28px;text-align:center}
+.vpanel .te{color:#f1c48f;font-size:2.4rem;line-height:1}
+.vpanel h2{font-size:clamp(1.9rem,5vw,2.6rem);margin-top:4px}
+.vpanel .ul{display:block;width:64px;height:3px;background:#f1c48f;border-radius:3px;margin:12px auto 34px}
+.vcols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;text-align:left}
+.vinfo{text-align:center}.vinfo h3{font-size:1.25rem}.vinfo p{opacity:.9;margin-bottom:18px}
+.vinfo table{width:100%;max-width:340px;margin:0 auto 24px;border-collapse:collapse}
+.vinfo td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.3)}.vinfo td:last-child{text-align:right}
+.vb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.vb a{padding:11px 22px;border-radius:99px;border:2px solid #fff;font-weight:600;font-size:.88rem;transition:.2s}
+.vb a:hover{background:rgba(255,255,255,.18)}.vb a.f{background:#f3f8fa;color:#2f4756;border-color:#f3f8fa}.vb a.f:hover{background:#fff}
+#mapbox{margin:0}#mapbox iframe{height:340px;border:6px solid var(--blue);border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+footer{text-align:center}
+.frow{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;color:#fff;font-size:1rem}
+.logo{background:#f3f8fa;border-radius:18px;padding:6px 16px;display:inline-flex}.logo img{width:58px;height:58px;border-radius:50%}
+.fig{display:inline-block;margin:22px 0 14px;color:#fff;text-decoration:underline;font-weight:500}
+footer .copy{margin:0 0 8px;color:#a9c0cf}footer .made{color:#c9dbe6}
+footer .made a{color:#f1c48f;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+@media(max-width:760px){.vcols{grid-template-columns:1fr}.vpanel{padding:44px 18px;border-radius:28px}}
 </style>
 </head>
 <body>
@@ -162,23 +183,29 @@ footer{background:#2f4756;color:#c9dbe6;margin-top:0;padding:44px 0}footer .scri
  <p style="text-align:center;margin-top:30px"><a class="btn main" href="https://drive.google.com/file/d/1nIYFy3nX8RYOm1gexgCY7Ls2xCNSZi9t/view" target="_blank" rel="noopener">Ver carta completa en PDF</a></p>
 </section>
 
-<section class="visit" id="visitanos"><div class="wrap">
- <div class="sec-title">Visitanos</div>
- <div class="vgrid" id="visit"></div>
- <div id="mapbox"></div>
-</div></section>
+<section class="visit" id="visitanos"><div class="wrap"><div class="vpanel">
+ <div class="script te">Te esperamos</div>
+ <h2>Pasá por Paulis</h2><span class="ul"></span>
+ <div class="vcols"><div class="vinfo" id="vinfo"></div><div id="mapbox"></div></div>
+</div></div></section>
 
-<footer><div class="wrap"><span class="script">Paulis</span>Pastelería · Laminados y Café<br>Los precios pueden cambiar sin previo aviso.</div></footer>
-<a class="wa" id="wa" target="_blank" rel="noopener">WhatsApp</a>
+<footer><div class="wrap">
+ <div class="frow"><span class="logo"><img src="logo.png" alt="Paulis"></span><span id="faddr"></span></div>
+ <a id="fig" class="fig" target="_blank" rel="noopener"></a>
+ <p class="copy">© 2026 Paulis Pastelería · Los precios pueden cambiar sin previo aviso.</p>
+ <p class="made">Maqueta creada por <a id="dev">Diego Zarrelli</a> ↗</p>
+</div></footer>
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
 <script>
 // ✏️ DATOS DEL LOCAL: completá lo que tengas. Lo que dejes vacío no se muestra.
 const INFO={
  address:"Av. Emilio Castro 6907, Buenos Aires",
- hours:["Lunes a lunes de 8 a 20 hs"],
+ hours:[["Todos los días","8 a 20 hs"]],
  open:8, close:20,   // para el cartel "Abierto ahora"
  whatsapp:"5491132092358",
- instagram:"paulis.pasteleria"
+ instagram:"paulis.pasteleria",
+ dev:""              // link de "Diego Zarrelli" en el footer (opcional)
 };
 // 📸 Fotos extra del local: subí las imágenes al repo y poné los nombres acá, ej: ["lugar1.jpg","lugar2.jpg"]
 const GALLERY=[];
@@ -205,14 +232,16 @@ document.getElementById("chips").innerHTML=MENU.map(m=>`<button data-id="${m.id}
 const tabs=[...document.querySelectorAll("#chips button")],secs=[...document.querySelectorAll(".msec")];
 function show(id){tabs.forEach(b=>b.classList.toggle("on",b.dataset.id===id));secs.forEach(x=>x.classList.toggle("on",x.id===id))}
 tabs.forEach(b=>b.onclick=()=>show(b.dataset.id));show("cafeteria");
-// info del local
-const v=[];
-if(INFO.address)v.push(`<div class="card"><h3>Dónde estamos</h3><p>${esc(INFO.address)}</p><a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Paulis "+INFO.address)}">Abrir en Maps</a></div>`);
-if(INFO.hours.length)v.push(`<div class="card"><h3>Horarios</h3><p>${INFO.hours.map(esc).join("<br>")}</p></div>`);
-if(INFO.instagram)v.push(`<div class="card"><h3>Instagram</h3><p>@${esc(INFO.instagram)}</p><a class="btn alt" target="_blank" rel="noopener" href="https://instagram.com/${INFO.instagram}">Seguinos</a></div>`);
-if(INFO.whatsapp)v.push(`<div class="card"><h3>Escribinos</h3><p>Consultas y pedidos por WhatsApp.</p><a class="btn alt" target="_blank" rel="noopener" href="https://wa.me/${INFO.whatsapp}">WhatsApp</a></div>`);
-if(!v.length)document.getElementById("visitanos").style.display="none";
-document.getElementById("visit").innerHTML=v.join("");
+// Visitanos + footer
+const mp="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Paulis "+INFO.address);
+const [a1,...a2]=INFO.address.split(", ");
+document.getElementById("vinfo").innerHTML=(INFO.address?`<h3>${esc(a1)}</h3><p>${esc(a2.join(", "))}</p>`:"")
++(INFO.hours.length?`<table>${INFO.hours.map(h=>`<tr><td>${esc(h[0])}</td><td>${esc(h[1])}</td></tr>`).join("")}</table>`:"")
++`<div class="vb">${INFO.address?`<a class="f" target="_blank" rel="noopener" href="${mp}">Cómo llegar</a>`:""}${INFO.whatsapp?`<a target="_blank" rel="noopener" href="https://wa.me/${INFO.whatsapp}">WhatsApp</a>`:""}${INFO.instagram?`<a target="_blank" rel="noopener" href="https://instagram.com/${INFO.instagram}">Instagram</a>`:""}</div>`;
+if(!INFO.address)document.getElementById("mapbox").style.display="none";
+document.getElementById("faddr").textContent=INFO.address;
+if(INFO.instagram){const g=document.getElementById("fig");g.href="https://instagram.com/"+INFO.instagram;g.textContent="@"+INFO.instagram}
+if(INFO.dev)document.getElementById("dev").href=INFO.dev;
 if(INFO.whatsapp){const w=document.getElementById("wa");w.href="https://wa.me/"+INFO.whatsapp;w.style.display="flex"}
 if(INFO.address)document.getElementById("mapbox").innerHTML=`<iframe title="Mapa" loading="lazy" src="https://www.google.com/maps?q=${encodeURIComponent("Paulis "+INFO.address)}&output=embed"></iframe>`;
 if(INFO.instagram){const b=document.getElementById("igBtn");b.href="https://instagram.com/"+INFO.instagram;b.style.display="inline-block"}
@@ -223,7 +252,7 @@ if(INFO.hours.length){const d=new Date(new Date().toLocaleString("en-US",{timeZo
 if(INFO.whatsapp){const n=document.getElementById("navwa");n.href="https://wa.me/"+INFO.whatsapp;n.style.display="inline-block"}
 // animación al hacer scroll
 const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll(".card,.sec-title,.about .big,.about .lead,#menu,#mapbox").forEach(e=>{e.classList.add("rv");rv.observe(e)});
+document.querySelectorAll(".vpanel,.card,.sec-title,.about .big,.about .lead,#menu,#mapbox").forEach(e=>{e.classList.add("rv");rv.observe(e)});
 </script>
 </body>
 </html>
